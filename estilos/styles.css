@@ -1,0 +1,248 @@
+:root {
+
+    --device-bg: url('../images/macbook.png');
+    --device-ar: 3944 / 2564;
+    --device-width: 70vw;
+    --screen-top: 11.3%;
+    --screen-left: 11.5%;
+    --screen-right: 11.5%;
+    --screen-bottom: 11%;
+    --c-section: #64748b;
+    /* 
+        --c-screen: #ef4444;
+        --c-windowbar: #f97316;
+        --c-scroll-area: #3b82f6;
+        --c-sticky-header: #22c55e;
+        --c-main: #eab308;
+        --c-left-col: #14b8a6;
+        --c-right-col: #8b5cf6;
+        --c-player: #ef4444;
+        */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial;
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+.Macbook {
+    background-image: var(--device-bg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: var(--device-width);
+    aspect-ratio: var(--device-ar);
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.screen {
+    position: absolute;
+    top: var(--screen-top);
+    left: var(--screen-left);
+    right: var(--screen-right);
+    bottom: var(--screen-bottom);
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid var(--c-screen);
+}
+
+.window-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    background-color: #e8e8e8;
+    z-index: 35;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--c-windowbar);
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.control-btn.close {
+    background-color: #ff5f57;
+}
+
+.control-btn.minimize {
+    background-color: #febc2e;
+}
+
+.control-btn.maximize {
+    background-color: #28c840;
+}
+
+
+.profile-card {
+    position: absolute;
+    top: 36px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    background: white;
+    color: #333;
+    border-left: 3px dashed var(--c-scroll-area);
+    border-right: 3px dashed var(--c-scroll-area);
+}
+
+.profile-card::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.profile-header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    border-bottom: 3px solid var(--c-sticky-header);
+}
+
+.main {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    border: 3px dotted var(--c-main);
+}
+
+@media (min-width: 768px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.col-left {
+    padding: 12px;
+    border: 3px solid var(--c-left-col);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.col-right {
+    padding: 12px;
+    border: 3px solid var(--c-right-col);
+}
+
+.block {
+    padding: 12px;
+    border: 2px dashed var(--c-section);
+}
+
+.extras {
+    padding: 1.5rem;
+}
+
+.extra {
+    padding: 12px;
+    border: 2px dashed var(--c-section);
+}
+
+.player-bar-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background-color: #e8e8e8;
+    backdrop-filter: blur(2px);
+    z-index: 30;
+    border-bottom-left-radius: px;
+    border-bottom-right-radius: 10px;
+    border-top: 3px solid var(--c-player);
+}
+
+.profile-photo-container {
+    flex: 1;
+    min-height: 0;
+    padding: 0;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.text-blocks-container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.block.galeriaPeliculas {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: stretch;
+    flex: initial;
+}
+
+.block.galeriaPeliculas img {
+    flex: 1 1 0%;
+    min-width: 0;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 1024px) {
+    :root {
+
+        --device-bg: url('/HomeWork/images/iphone_16.png');
+        --device-ar: 1290 / 2796;
+        --screen-top: 12.5%;
+        --screen-left: 6.8%;
+        --screen-right: 6.8%;
+        --screen-bottom: 5.8%;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --device-width: 88vw;
+    }
+}
