@@ -1,6 +1,6 @@
 :root {
 
-    --device-bg: url('../images/macbook.png');
+    --device-bg: url('/entregable1-web1-Artunduaga-Camilo/images/macbook.png');
     --device-ar: 3944 / 2564;
     --device-width: 70vw;
     --screen-top: 11.3%;
@@ -232,7 +232,7 @@ body {
 @media (max-width: 1024px) {
     :root {
 
-        --device-bg: url('/HomeWork/images/iphone_16.png');
+        --device-bg: url('/entregable1-web1-Artunduaga-Camilo/images/iphone_16.png');
         --device-ar: 1290 / 2796;
         --screen-top: 12.5%;
         --screen-left: 6.8%;
